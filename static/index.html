@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ogres VTT + Destek</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div id="app-header">
+        <div class="logo">Ogres VTT + Destek</div>
+        <div class="toolbar">
+            <button id="btn-add-token">+ Token Ekle</button>
+            <button id="btn-grid-toggle">Izgara Değiştir</button>
+            <button id="btn-next-turn">Sonraki Tur</button>
+        </div>
+    </div>
+
+    <div id="main-container">
+        <!-- VTT Canvas Container -->
+        <div id="vtt-viewport">
+            <div id="map-container">
+                <img id="animated-map" src="/static/maps/sample_map.webp" alt="Battlemap" onerror="this.style.display='none'">
+                <canvas id="grid-canvas"></canvas>
+            </div>
+        </div>
+
+        <!-- Sidebar / Destek Paneli -->
+        <div id="sidebar">
+            <div class="panel-section">
+                <h3>İnisiyatif Takibi</h3>
+                <ul id="initiative-list">
+                    <li class="active"><strong>Savaşçı (DM)</strong> - HP: 25/25</li>
+                    <li><strong>Büyücü</strong> - HP: 14/14</li>
+                    <li><strong>Goblin 1</strong> - HP: 7/7</li>
+                </ul>
+            </div>
+
+            <div class="panel-section">
+                <h3>Zar Atıcı</h3>
+                <div class="dice-buttons">
+                    <button class="dice-btn" data-dice="4">d4</button>
+                    <button class="dice-btn" data-dice="6">d6</button>
+                    <button class="dice-btn" data-dice="8">d8</button>
+                    <button class="dice-btn" data-dice="10">d10</button>
+                    <button class="dice-btn" data-dice="12">d12</button>
+                    <button class="dice-btn" data-dice="20">d20</button>
+                    <button class="dice-btn" data-dice="100">d100</button>
+                </div>
+                <div id="dice-result">Sonuç: -</div>
+            </div>
+
+            <div class="panel-section">
+                <h3>VTT Destek Kılavuzu</h3>
+                <p>WebP animasyonlu haritanızı <code>/static/maps/</code> klasörüne ekleyerek doğrudan kullanabilirsiniz.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
